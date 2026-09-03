@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh "NODE_OPTIONS='--max-old-space-size=1024' npm install --prefer-offline --no-audit --no-fund"
+                sh "NODE_OPTIONS='--max-old-space-size=512' npm ci --prefer-offline --no-audit --no-fund"
             }
         }
         stage('TRIVY FS SCAN') {
